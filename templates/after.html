@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        p {
+            text-align: center;
+            font-size: 24px;
+            color: #007BFF; /* Blue color for the prediction */
+            margin-top: 20px;
+        }
+        .container {
+            max-width: 600px;
+            margin: 20px auto;
+            padding: 38px;
+            border: 1px solid #1a0d91;
+            background-color: rgba(204, 216, 216, 0.8); /* Add an overlay to make the text more readable */
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <h2>Prediction Result:</h2>
+    <p class="container">The predicted accident severity is: {{ data[0] }}</p>
+</body>
+</html>

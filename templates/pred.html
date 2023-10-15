@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <style>
+       
+        body {
+            font-family: 'poppins';
+            background-color: #b9e5e3;
+            margin: 0;
+            padding: 0;
+            color:rgb(12, 0, 0);
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 20px;
+            color:black;
+        }
+
+        form {
+            background-color: #3196a5;
+            padding: 20px;
+            width: 100%; 
+            margin: 20px auto;
+            max-width: 400px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px rgba(62, 52, 175, 0.2);
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            
+        }
+
+        select,
+        input[type="range"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            color:aliceblue;
+            font-weight: bold;
+            background-color: #041201 ;
+
+        }
+
+        input[type="submit"] {
+            background-color: #931c2a;
+            color: #fff;
+            padding: 10px 20px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+        .container {
+            max-width: 500px;
+            margin: 20px auto;
+            padding: 1px;
+        
+            background-color: rgba(151, 220, 220, 0.8); /* Add an overlay to make the text more readable */
+            border-radius: 4px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .title {
+            color: rgb(6, 89, 58); /* White color for the title */
+            text-align: center; /* Center-align the title if needed */
+            padding: 10px; /* Adjust padding as needed */
+}
+
+
+        input[type="submit"]:hover {
+            background-color: #0056b3;
+          }
+</style>
+
+</head>
+
+<body>
+    <div class="container">
+    
+    <h2 class="title">Enter the inputs for prediction:</h2>
+    </div>
+    <form action="/Predict" method="post">
+        <label for="hour">Time:</label>
+        <select id="hour" name="hour">
+            <option value="0">0</option>
+            <option value="1">1</option>
+            <option value="2">2</option>
+            <option value="3">3</option>
+            <option value="4">4</option>
+            <option value="5">5</option>
+            <option value="6">6</option>
+            <option value="7">7</option>
+            <option value="8">8</option>
+            <option value="9">9</option>
+            <option value="10">10</option>
+            <option value="11">11</option>
+            <option value="12">12</option>
+            <option value="13">13</option>
+            <option value="14">14</option>
+            <option value="15">15</option>
+            <option value="16">16</option>
+            <option value="17">17</option>
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+            <option value="23">23</option>
+        </select>
+        
+        <br><br>
+        <label for="day_of_week">Select Day of the Week:</label>
+        <select id="day_of_week" name="day_of_week">
+            <option value="Monday">Monday</option>
+            <option value="Sunday">Sunday</option>
+            <option value="Friday">Friday</option>
+            <option value="Tuesday">Tuesday</option>
+            <option value="Thursday">Thursday</option>
+            <option value="Wednesday">Wednesday</option>
+            <option value="Saturday">Saturday</option>
+        </select>
+        <br><br>
+
+        <label for="driving_experience">Driving Experience:</label>
+        <select id="driving_experience" name="driving_experience">
+        <option value="1-2yr">1-2 years</option>
+        <option value="Above 10yr">Above 10 years</option>
+        <option value="5-10yr">5-10 years</option>
+        <option value="2-5yr">2-5 years</option>
+        <option value="0">No experience</option>
+        <option value="No Licence">No License</option>
+        <option value="Below 1yr">Below 1 year</option>
+        <option value="unknown">Unknown</option>
+        </select>
+
+
+
+        <label for="age_band">Age Band of Driver:</label>
+        <select id="age_band" name="age_band">
+            <option value="18-30">18-30</option>
+            <option value="31-50">31-50</option>
+            <option value="Under 18">Under 18</option>
+            <option value="Over 51">Over 51</option>
+            
+        </select>
+        <br><br>
+        <label for="vehicle_type">Vehicle Type:</label>
+        <select id="vehicle_type" name="vehicle_type">
+            <option value="Automobile">Automobile</option>
+            <option value="Public (> 45 seats)">Public (> 45 seats)</option>
+            <option value="Lorry (41-100Q)">Lorry (41-100Q)</option>
+            <option value="Public (13-45 seats)">Public (13-45 seats)</option>
+            <option value="Lorry (11-40Q)">Lorry (11-40Q)</option>
+            <option value="Long lorry">Long lorry</option>
+            <option value="Public (12 seats)">Public (12 seats)</option>
+            <option value="Taxi">Taxi</option>
+           <option value="Stationwagen">Stationwagen</option>
+            <option value="Ridden horse">Ridden horse</option>
+            <option value="Other">Other</option>
+            <option value="Bajaj">Bajaj</option>
+            <option value="Turbo">Turbo</option>
+            <option value="Motorcycle">Motorcycle</option>
+            <option value="Special vehicle">Special vehicle</option>
+            <option value="Bicycle">Bicycle</option>
+        </select>
+
+        <label for="weather_conditions">Weather Conditions:</label>
+        <select id="weather_conditions" name="weather_conditions">
+            <option value="Normal">Normal</option>
+            <option value="Raining">Raining</option>
+            <option value="Raining and Windy">Raining and Windy</option>
+            <option value="Cloudy">Cloudy</option>
+            <option value="Other">Other</option>
+            <option value="Windy">Windy</option>
+            <option value="Snow">Snow</option>
+            <option value="Unknown">Unknown</option>
+            <option value="Fog or mist">Fog or mist</option>
+        </select>
+
+                <br><br>
+
+                <label for="routes_taken">Routes Taken:</label>
+        <select id="routes_taken" name="routes_taken">
+
+            <option value="Chikkadpally market to RTC X Roads">Chikkadpally market to RTC X Roads</option>
+            <option value="City college to Hassan nagar via PTO, Puranapool, Bahadurpura X Roads">City college to Hassan nagar via PTO, Puranapool, Bahadurpura X Roads</option>
+            <option value="Necklace road">Necklace road</option>
+            <option value="Chikkadpally market to RTC X Roads">Chikkadpally market to RTC X Roads</option>
+            <option value="Lakdi-ka-pool">Lakdi-ka-pool</option>
+            <option value="Tarnaka to Habsiguda X Roads">Tarnaka to Habsiguda X Roads</option>
+            <option value="R.P road">R.P road</option>
+            <option value="St.mary road">St.mary road</option>
+            <option value="Chadarghat to Ramkoti">Chadarghat to Ramkoti</option>
+            <option value="Plaza to Begumpet flyover, S.P. Road">Plaza to Begumpet flyover, S.P. Road</option>
+            <option value="Ayodhya Junction to PTI building">Ayodhya Junction to PTI building</option>
+            <option value="JBS towards airtel office">JBS towards airtel office</option>
+            <option value="S.A.bazar to M.J.market">S.A.bazar to M.J.market</option>
+            <option value="Ballamrai Junction to Tadbund Junction">Ballamrai Junction to Tadbund Junction</option>
+            <option value="Ramser caf  Junction to AOC centre">Ramser caf  Junction to AOC centre</option>
+            <option value="Abid road">Abid road</option>
+            <option value="Mehdipatnam to Attapur bridge">Mehdipatnam to Attapur bridge</option>
+            <option value="V V statue khairatabad to gokul theater erragadda ( via nims, panjaguut, s.r. Nagar, esi NH-9)">V V statue khairatabad to gokul theater erragadda (via nims, panjaguut, s.r. Nagar, esi NH-9)</option>
+            <option value="St. Ann's school bollaram to Bollaram checkpost">St. Ann's school bollaram to Bollaram checkpost</option>
+            <option value="Himayath nagar road">Himayath nagar road</option>
+            <option value="Others">Others</option>
+            <option value="NMDC to Mehdipatnam">NMDC to Mehdipatnam</option>
+            <option value="New Monda Market, Bowenpally towards Bapunji nagar">New Monda Market, Bowenpally towards Bapunji nagar</option>
+            <option value="NTR marg">NTR marg</option>
+            <option value="Amberpet to Ramanthapur">Amberpet to Ramanthapur</option>
+            <option value="Trimulgherry  x RDS towards lothukunta (rajiv rahadari)">Trimulgherry x RDS towards lothukunta (rajiv rahadari)</option>
+            <option value="AOC rotary to R.K. Puram X Roads">AOC rotary to R.K. Puram X Roads</option>
+            <option value="BJR statue Chermas">BJR statue Chermas</option>
+            <option value="Bowenpally check post towards Suchitra Junction.">Bowenpally check post towards Suchitra Junction.</option>
+            <option value="Greenlands to Ameerpet">Greenlands to Ameerpet</option>
+            <option value="Malakunta to M.J..bridge">Malakunta to M.J..bridge</option>
+            <option value="Bowenpally X Roads to Bowenpally check post">Bowenpally X Roads to Bowenpally check post</option>
+            <option value="Rd no.2 Banjara Hills">Rd no.2 Banjara Hills</option>
+            <option value="Chaderghat rotary towards S.J. Rotary via Kalikabher.">Chaderghat rotary towards S.J. Rotary via Kalikabher.</option>
+            <option value="Rethi Bowli to Shaikpet Nala">Rethi Bowli to Shaikpet Nala</option>
+            <option value="Tadbund to Bowenpally">Tadbund to Bowenpally</option>
+            <option value="RTC X Roadss to Golconda X Roads">RTC X Roadss to Golconda X Roads</option>
+            <option value="Zoo park, Tadban X Roads">Zoo park, Tadban X Roads</option>
+            <option value="Foot of fly over at NMDC end and NMDC Junction">Foot of fly over at NMDC end and NMDC Junction</option>
+            <option value="Jubilee hills check post to madhapur">Jubilee hills check post to madhapur</option>
+            <option value="Greenlands fly over to V.V. statue (via raj bhavan)">Greenlands fly over to V.V. statue (via raj bhavan)</option>
+            <option value="Old Saifabad PS Junction">Old Saifabad PS Junction</option>
+            <option value="Grrenlands to NFCL Junction">Grrenlands to NFCL Junction</option>
+            <option value="Brook bond X Roads towards new Monda market, Bowenpally">Brook bond X Roads towards new Monda market, Bowenpally</option>
+            <option value="Bank street to DM and HS">Bank street to DM and HS</option>
+            <option value="Ranghamahal to Afzalgunj">Ranghamahal to Afzalgunj</option>
+            <option value="Rd no.12 Banjara Hills">Rd no.12 Banjara Hills</option>
+            <option value="Nampally Junction to AP legislative Assembly">Nampally Junction to AP legislative Assembly</option>
+            <option value="Lothukunta towards st. Ann's school Bollaram (Rahadari)">Lothukunta towards st. Ann's school Bollaram (Rahadari)</option>
+            <option value="Military Diary form road Junction towards holy family Junction">Military Diary form road Junction towards holy family Junction</option>
+            <option value="Tankbund Arch to Sailing club">Tankbund Arch to Sailing club</option>
+            <option value="Sailing club to CTO, M.G.road">Sailing club to CTO, M.G.road</option>
+            <option value="Nanal nagar to Tipu khan bridge">Nanal nagar to Tipu khan bridge</option>
+            <option value="VST to RTC X Roads">VST to RTC X Roads</option>
+            <option value="Bowenpally towards Balanagar">Bowenpally towards Balanagar</option>
+            <option value="Hanuman temple in between RTA office">Hanuman temple in between RTA office</option>
+            <option value="Near foot of the flyover near old gate sect">Near foot of the flyover near old gate sect</option>
+            <option value="Chadharghat to M.J. Market">Chadharghat to M.J. Market</option>
+            <option value="Liberty to Telugutalli">Liberty to Telugutalli</option>
+            <option value="Nayapool bridge, Afzalgunj  to S.A.Bazar">Nayapool bridge, Afzalgunj to S.A.Bazar</option>
+        </select>
+        <br><br>
+                
+        <input type="submit" value="Predict">
+    </form>
+ 
+</body>
+</html>
